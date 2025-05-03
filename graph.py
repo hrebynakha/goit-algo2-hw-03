@@ -16,8 +16,8 @@ class Graph:
         self.custom_labels = {}
         self.color_map = {
             "source": "skyblue",
-            "sink": "blue",
-            "target": "green",
+            "intermediate": "yellow",
+            "sink": "green",
         }
         self.node_colors = []
 
@@ -47,22 +47,19 @@ class Graph:
         self,
         node_types: dict[int, str],
         node_labels: dict[int, str],
-        position_map: dict[int, tuple[int, int]],
     ):
         """
         Set nodes config, for drawing graph.
-        Set node types, colors, labels and positions.
+        Set node types, colors, and labels.
 
         Args:
             node_types: dict[int, str]
             node_labels: dict[int, str]
-            position_map: dict[int, tuple[int, int]]
 
         """
         self.set_node_types(node_types)
         self.set_node_colors()
         self.set_custom_labels(node_labels)
-        self.set_positions(position_map)
 
     def set_custom_labels(self, labels):
         """Set custom labels."""
