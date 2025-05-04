@@ -36,11 +36,13 @@ class SimpleOOBTree:
 
     def add_item_to_tree(self, item: dict) -> None:
         """Add item to tree."""
-        self.tree[item["id"]] = item
+        self.tree[item["price"], item["id"]] = item
 
-    def range_qurey_tree(self, start: int, end: int) -> list[dict]:
+    def range_qurey_tree(self, start_price: float, end_price: float) -> list[dict]:
         """Range query tree."""
-        return self.tree.items(start, end + 1)
+        return list(
+            self.tree.items(min=(start_price, 0), max=(end_price, len(self.tree)))
+        )
 
 
 class SimpleDict:
@@ -59,11 +61,12 @@ class SimpleDict:
         """Add item to dict."""
         self.dict[item["id"]] = item
 
-    def range_qurey_dict(self, start: int, end: int) -> list[dict]:
+    def range_qurey_dict(self, start_price: float, end_price: float) -> list[dict]:
         """Range query dict."""
         result = []
-        for id_ in range(start, end + 1):
-            result.append(self.dict[id_])
+        for item in self.dict.values():
+            if start_price <= item["price"] <= end_price:
+                result.append(item)
         return result
 
 
@@ -75,9 +78,8 @@ def main() -> None:
     )
     oobtree = SimpleOOBTree(data)
     simple_dict = SimpleDict(data)
-
-    run_test(oobtree, simple_dict, 9100, 9200)
-    run_test(oobtree, simple_dict, 12345, 23456, 1000)
+    run_test(oobtree, simple_dict, 0, 100)
+    run_test(oobtree, simple_dict, 123.45, 223.45)
 
 
 def run_test(
