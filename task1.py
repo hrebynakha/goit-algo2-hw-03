@@ -153,10 +153,11 @@ class LogisticsNetwork(Graph):
             print(f"Total for {source}: {count}")
 
 
-if __name__ == "__main__":
-    DEBUG = False
+def main() -> None:
+    """Main function."""
+    debug = False
 
-    if DEBUG:
+    if debug:
         index, *conf = 0, "Джерело", "Вуз", "Споживач"
     else:
         index, *conf = 1, "Термінал", "Склад", "Магазин"
@@ -168,3 +169,7 @@ if __name__ == "__main__":
     ln.set_nodes_config(*ln.get_nodes_config())
     ln.draw()
     ln.get_report()
+
+
+if __name__ == "__main__":
+    main()

@@ -1,19 +1,19 @@
 # goit-algo2-hw-03
 
 
-## Task 1
 
 ### Description
 
 
-
 ### Files
 
-- `task1.py` - main script, where we load data and draw graph, and calculate maximum flow
+- `task1.py` - main script for task1, where we load data and draw graph, and calculate maximum flow
 - `data/` - data files with connections between nodes, and positions of nodes
 - `helpers.py` - helper functions, like loading data from CSV and JSON files
 - `graph.py` - graph module for drawing graph using networkx and matplotlib
 - `algorithms.py` - algorithms module for finding maximum flow
+
+## Task 1
 
 ### How to run
 
@@ -23,7 +23,6 @@ python task1.py
 
 ### Results
 
-#### Task 1
 
 It output graph and maximum flow for each source and sink as table in console.
 
