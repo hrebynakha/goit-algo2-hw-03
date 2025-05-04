@@ -8,6 +8,7 @@
 ### Files
 
 - `task1.py` - main script for task1, where we load data and draw graph, and calculate maximum flow
+- `task2.py` - main script for task2, where we load data from csv and create two calases SimpleOOBTree and SimpleDict, and compare their performance
 - `data/` - data files with connections between nodes, and positions of nodes
 - `helpers.py` - helper functions, like loading data from CSV and JSON files
 - `graph.py` - graph module for drawing graph using networkx and matplotlib
@@ -77,3 +78,31 @@ Final table for task 1 looks like:
     
     
 > Згідно отриманої таблиці, бачимо що Магазини `10-14` не можуть отримувати товари з `Терміналу 1`, а також в свою чергу Магазини `1-3`не можуть отримувати товарів з `Терміналу 2`. Тому, в разі проблеми чи виведення з ладу одного із терміналів, можна припустити що дані магазини не отримають товари. Для поліпшення ситуації, необхідно робити додаткові маршрути з `Терміналу 1` до `Складу 4` а також з `Терміналу 2` до `Складу 1` 
+
+### Task 2
+
+#### How to run
+
+```bash
+python task2.py
+```
+
+#### Results
+Output for test 1 (range from **0** to **100**):
+```
+Total range_query time for OOBTree: 0.13662397899997814 seconds
+Total range_query time for Dict: 0.5923984920000294 seconds
+```
+
+Output for test 2 (range from **123.45** to **223.45**):
+```
+Total range_query time for OOBTree: 0.2059548689999815 seconds
+Total range_query time for Dict: 0.5674667820000536 seconds
+```
+
+
+
+### Conclusions
+
+
+OOBTree is faster than Dict becouse it can use serch price range, not iterating over all items. OOBTree save key as tuple (price, id) and use it to find items in tree faster.
