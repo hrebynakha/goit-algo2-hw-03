@@ -36,9 +36,9 @@ class LogisticsNetwork(Graph):
     ) -> None:
         super().__init__()
         self.connections = connections
-        self.source = self.get_source_map(source_name)
-        self.intermediate = self.get_intermediate_map(intermediate_name)
-        self.sink = self.get_sink_map(sink_name)
+        self.source = self.get_map(source_name, "from")
+        self.intermediate = self.get_map(intermediate_name, "from")
+        self.sink = self.get_map(sink_name, "to")
 
         self.map = {
             **self.source,
@@ -78,18 +78,6 @@ class LogisticsNetwork(Graph):
             ids[node] = id_
             id_ += 1
         return ids
-
-    def get_source_map(self, name: str) -> dict[str, int]:
-        """Get map of sources."""
-        return self.get_map(name, "from")
-
-    def get_intermediate_map(self, name: str) -> dict[str, int]:
-        """Get map of sinks."""
-        return self.get_map(name, "to")
-
-    def get_sink_map(self, name: str) -> dict[str, int]:
-        """Get map of targets."""
-        return self.get_map(name, "to")
 
     def get_nodes_config(
         self,
