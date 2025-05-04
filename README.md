@@ -3,7 +3,7 @@
 
 
 ### Description
-
+Home work 3 for second algorithm course.
 
 ### Files
 
@@ -16,13 +16,13 @@
 
 ## Task 1
 
-### How to run
+#### How to run
 
 ```bash
 python task1.py
 ```
 
-### Results
+#### Results
 
 
 It output graph and maximum flow for each source and sink as table in console.
@@ -64,7 +64,7 @@ Final table for task 1 looks like:
 
 
 
-### Questions
+#### Questions
 
 1. Які термінали забезпечують найбільший потік товарів до магазинів?
 > `Термінал 2` забезпечує найбільший потік товарів до магазинів(загалом охоплює 11 магазинів `4-14`), в свою чергу Термінал 1 відстає лише на 2 магазини та охоплює мереежу магазинів `1-9` при цьому загальний потік товарів на відповідні мережі магазинів рівний(**130**)
@@ -79,7 +79,7 @@ Final table for task 1 looks like:
     
 > Згідно отриманої таблиці, бачимо що Магазини `10-14` не можуть отримувати товари з `Терміналу 1`, а також в свою чергу Магазини `1-3`не можуть отримувати товарів з `Терміналу 2`. Тому, в разі проблеми чи виведення з ладу одного із терміналів, можна припустити що дані магазини не отримають товари. Для поліпшення ситуації, необхідно робити додаткові маршрути з `Терміналу 1` до `Складу 4` а також з `Терміналу 2` до `Складу 1` 
 
-### Task 2
+## Task 2
 
 #### How to run
 
@@ -102,7 +102,7 @@ Total range_query time for Dict: 0.5674667820000536 seconds
 
 
 
-### Conclusions
+#### Conclusions
 
 
 OOBTree is faster than Dict becouse it can use serch price range, not iterating over all items. OOBTree save key as tuple (price, id) and use it to find items in tree faster.
