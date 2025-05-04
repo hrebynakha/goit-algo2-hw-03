@@ -105,4 +105,4 @@ Total range_query time for Dict: 0.5674667820000536 seconds
 #### Conclusions
 
 
-OOBTree is faster than Dict becouse it can use serch price range, not iterating over all items. OOBTree save key as tuple (price, id) and use it to find items in tree faster.
+OOBTree is faster than Dict because it can use serch price range, not iterating over all items. OOBTree save key as tuple (price, id) and use it to find items in tree faster.
