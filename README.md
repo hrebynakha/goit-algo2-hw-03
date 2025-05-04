@@ -9,10 +9,10 @@
 
 - `task1.py` - main script for task1, where we load data and draw graph, and calculate maximum flow
 - `task2.py` - main script for task2, where we load data from csv and create two calases SimpleOOBTree and SimpleDict, and compare their performance
-- `data/` - data files with connections between nodes, and positions of nodes
+- `data/` - data files with connections between nodes, and positions of nodes (for task1) and items data (for task2)
 - `helpers.py` - helper functions, like loading data from CSV and JSON files
-- `graph.py` - graph module for drawing graph using networkx and matplotlib
-- `algorithms.py` - algorithms module for finding maximum flow
+- `graph.py` - graph module for drawing graph using networkx and matplotlib (for task1)
+- `algorithms.py` - algorithms module for finding maximum flow (for task1)
 
 ## Task 1
 
